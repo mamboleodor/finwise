@@ -78,10 +78,10 @@ const AppContent = ({ user, onLogout, currentPage, setCurrentPage }) => {
   }
 
   return (
-    <div style={{ backgroundColor: '#f5f5f5', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="bg-slate-50 min-h-screen flex flex-col">
       <Header user={user} onLogout={onLogout} />
 
-      <div style={{ flex: 1, overflowY: 'auto', paddingBottom: '100px' }}>
+      <div className="flex-1 overflow-y-auto pb-24">
         {currentPage === 'dashboard' && (
           <Dashboard
             balance={balance}

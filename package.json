@@ -11,11 +11,12 @@
     "@uiw/react-md-editor": "^4.1.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.2.1",
+    "lucide-react": "^1.27.0",
     "papaparse": "^5.5.4",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-scripts": "5.0.1",
-    "recharts": "^3.10.0",
+    "recharts": "^3.10.1",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
@@ -45,7 +46,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.5.4",
-    "postcss": "^8.5.20",
-    "tailwindcss": "^4.3.3"
+    "postcss": "^8.5.25",
+    "tailwindcss": "^3.4.19"
   }
 }
