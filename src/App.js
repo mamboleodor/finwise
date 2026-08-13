@@ -1,3 +1,5 @@
+import Loader from './components/Loader';
+import { Button } from './components/ui/button'
 import React, { useState, useEffect } from 'react';
 import IdeasPage from './IdeasPage';
 import Dashboard from './Dashboard';
