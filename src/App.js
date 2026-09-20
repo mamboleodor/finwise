@@ -9,6 +9,8 @@ import './App.css';
 import { supabase } from './supabaseClient';
 import Auth from './Auth';
 import useFinanceData from './useFinanceData';
+import MovingOutPage from './MovingOutPage';
+import MealPlanPage from './MealPlanPage';
 
 const FinWise = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -138,6 +140,8 @@ const AppContent = ({ user, onLogout, currentPage, setCurrentPage }) => {
             savingsGoals={savingsGoals}
           />
         )}
+{currentPage === 'movingout' && <MovingOutPage />}
+{currentPage === 'mealplan' && <MealPlanPage />}
       </div>
 
       <BottomNav currentPage={currentPage} onNavigate={setCurrentPage} />
@@ -511,18 +515,20 @@ const ReminderForm = ({ onSave, onCancel }) => {
 
 const BottomNav = ({ currentPage, onNavigate }) => {
   const navItems = [
-    { id: 'dashboard', label: 'Home' },
-    { id: 'earnings', label: 'Earnings' },
-    { id: 'spending', label: 'Spending' },
-    { id: 'savings', label: 'Savings' },
-    { id: 'investments', label: 'Invest' },
-    { id: 'ideas', label: 'Ideas' },
-    { id: 'insights', label: 'Insights' },
-    { id: 'transactions', label: 'History' },
-  ];
+  { id: 'dashboard', label: 'Home' },
+  { id: 'earnings', label: 'Earnings' },
+  { id: 'spending', label: 'Spending' },
+  { id: 'savings', label: 'Savings' },
+  { id: 'investments', label: 'Invest' },
+  { id: 'movingout', label: 'Moving' },
+  { id: 'mealplan', label: 'Meals' },
+  { id: 'ideas', label: 'Ideas' },
+  { id: 'insights', label: 'Insights' },
+  { id: 'transactions', label: 'History' },
+];
 
   return (
-    <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: 'white', borderTop: '1px solid #E0E0E0', display: 'grid', gridTemplateColumns: 'repeat(8, 1fr)', zIndex: 50 }}>
+    <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: 'white', borderTop: '1px solid #E0E0E0', display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', zIndex: 50 }}>
       {navItems.map(item => (
         <button
           key={item.id}
